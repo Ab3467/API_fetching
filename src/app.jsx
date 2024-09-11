@@ -4,7 +4,7 @@ export default function app() {
   return (
     <div>
       <p>
-        Welcome to 
+        Welcome to website
       </p>
     </div>
   )
