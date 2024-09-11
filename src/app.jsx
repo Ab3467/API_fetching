@@ -1,15 +1,15 @@
 import React, { useContext } from "preact/compat";
 import Stories from "./components/Stories";
-import { AppContext } from "./context";
+import AppProvider, { AppContext } from "./context";
 
 export default function App() {
   const data = useContext(AppContext);
 
   return (
-    <div>
+    <AppProvider>
       <p>Welcome to {data}</p>
       <h2>Basic Content Test</h2> {/* Simple output to check rendering */}
       <Stories />
-    </div>
+    </AppProvider>
   );
 }
