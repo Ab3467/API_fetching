@@ -1,9 +1,10 @@
-import React, { useContext } from "preact/compat";
+import React from "preact/compat";
 import Stories from "./components/Stories";
-import AppProvider, { AppContext } from "./context";
+import AppProvider, { useGlobalContext } from "./context";
 
 export default function App() {
-  const data = useContext(AppContext);
+
+  let data = useGlobalContext();
 
   return (
     <AppProvider>
