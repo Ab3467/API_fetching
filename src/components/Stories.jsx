@@ -1,14 +1,15 @@
 import React, { useEffect } from "react"; // Correct import for React hooks
 
 export default function Stories() {
+  let isLoading = true;
   let API = "https://hn.algolia.com/api/v1/search?query=html";
 
   async function fetchApi(url) {
-    console.log("Fetching API...");  
     try {
       let response = await fetch(url);
       let data = await response.json();
       console.log("Fetched data: ", data);
+      isLoading = false;
     } catch (error) {
       console.log("Error fetching data: ", error);
     }
@@ -18,6 +19,12 @@ export default function Stories() {
   useEffect(() => {
     fetchApi(API);
   }, []);
+
+  if(isLoading){
+    <>
+      <h1>Loading....</h1>
+    </>
+  }
 
   return (
     <div>
