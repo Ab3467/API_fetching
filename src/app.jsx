@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <div>
-      <p>Welcome to website</p>
+      <p>Welcome to {data}</p>
       <h2>Basic Content Test</h2> {/* Simple output to check rendering */}
       <Stories />
     </div>
